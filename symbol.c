@@ -279,6 +279,7 @@ static struct opcode optable[] = {
 	{"rlc",		RLC,	rlc		},
 	{"rr",		RR,	rr		},
 	{"rrc",		RRC,	rrc		},
+	{"set",		D_SET,  NULL		},
 	{"setb",	SETB,	setb		},
 	{"sjmp",	SJMP,	sjmp		},
 	{"skip",	D_SKIP,	NULL		},

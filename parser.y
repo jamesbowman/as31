@@ -53,6 +53,7 @@ void genword(unsigned long w);
 %token D_WORD
 %token D_SKIP
 %token D_EQU
+%token D_SET
 %token D_FLAG
 %token D_END
 %token ACALL
@@ -200,6 +201,14 @@ directive	: '.' D_ORG defexpr
 	$3.sym->type = LABEL;
 	$3.sym->value = $5.val.v;
 	$$.value = 0;
+}
+                | '.' D_SET SYMBOL ',' expr
+{
+        if( $5.val.d == 0 )
+                warn("Expression is undefined in pass 1");
+        $3.sym->type = LABEL;
+        $3.sym->value = $5.val.v;
+        $$.value = 0;
 }
 	
 		| '.' D_FLAG SYMBOL ',' flag
