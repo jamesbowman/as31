@@ -231,6 +231,12 @@ space that has previously been assembled into.
 Set symbol to the value of expr. The value for expr must be
 known during the first pass, when the line containing the .EQU
 is encountered.
+It is an error for a symbol to appear in .EQU more than once.
+
+.IP ".SET symbol, expr"
+Set symbol to the value of expr. The value for expr must be
+known during the first pass, when the line containing the .SET
+is encountered.
 
 .IP ".BYTE expr, expr, ..."
 Assemble the bytes specified by the expression into memory. A
